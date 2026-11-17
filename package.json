@@ -1,0 +1,78 @@
+{
+  "name": "medusa-plugin-solmarrow",
+  "version": "1.0.0",
+  "description": "Send Medusa products to SolMarrow as social media drafts, then schedule them in SolMarrow.",
+  "author": "SolMarrow <support@solmarrow.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/solmarrow/medusa-plugin-solmarrow#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solmarrow/medusa-plugin-solmarrow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/solmarrow/medusa-plugin-solmarrow/issues",
+    "email": "support@solmarrow.com"
+  },
+  "files": [
+    ".medusa/server"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./modules/*": "./.medusa/server/src/modules/*/index.js",
+    "./*": "./.medusa/server/src/*.js",
+    "./admin": {
+      "import": "./.medusa/server/src/admin/index.mjs",
+      "require": "./.medusa/server/src/admin/index.js",
+      "default": "./.medusa/server/src/admin/index.js"
+    }
+  },
+  "keywords": [
+    "medusa-v2",
+    "medusa-plugin-integration",
+    "medusa-plugin-other",
+    "medusa-plugin",
+    "medusa",
+    "solmarrow",
+    "social-media",
+    "social-media-scheduler",
+    "marketing"
+  ],
+  "scripts": {
+    "build": "medusa plugin:build",
+    "dev": "medusa plugin:develop",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p src/admin/tsconfig.json",
+    "prepublishOnly": "medusa plugin:build"
+  },
+  "devDependencies": {
+    "@medusajs/admin-sdk": "2.22.7",
+    "@medusajs/cli": "2.22.7",
+    "@medusajs/framework": "2.22.7",
+    "@medusajs/js-sdk": "2.22.7",
+    "@medusajs/medusa": "2.22.7",
+    "@medusajs/test-utils": "2.22.7",
+    "@medusajs/ui": "4.2.14",
+    "@swc/core": "^1.7.28",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.2.25",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2",
+    "vite": "^7.3.7"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "^2.7.0",
+    "@medusajs/framework": "^2.7.0",
+    "@medusajs/js-sdk": "^2.7.0",
+    "@medusajs/medusa": "^2.7.0",
+    "@medusajs/ui": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
